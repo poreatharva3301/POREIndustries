@@ -39,3 +39,31 @@ h2 {text-align:center; font-size:2.5rem; margin-bottom:2rem; color:#ffd700;}
 
 /* ===== Footer ===== */
 footer {text-align:center; padding:2rem; color:#777; border-top:1px solid #222;}
+
+.launch-banner {
+  background: linear-gradient(90deg, gold, #C0C0C0);
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  animation: slideIn 1s ease forwards;
+}
+
+.launch-banner span {
+  color: #111;
+  text-shadow: 0 0 10px #C0C0C0;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
