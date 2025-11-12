@@ -67,25 +67,87 @@ footer {text-align:center; padding:2rem; color:#777; border-top:1px solid #222;}
     opacity: 1;
   }
 }
-.division-card.live {
-  border: 1px solid #C0C0C0; /* Platinum silver border */
-  box-shadow: 0 0 20px rgba(192, 192, 192, 0.4);
+/* --- Safe unified styles for division cards --- */
+/* Ensures we don't break previous .card styles but add live look */
+
+.divisions-cards { /* container spacing */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
 }
 
+/* base card fallback (if you already have .card, this will coexist) */
+.card {
+  background: #111;
+  border-radius: 12px;
+  padding: 1.6rem;
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+/* additional division specific */
+.division-card h3 { color: gold; margin-bottom: 0.6rem; font-size: 1.05rem; }
+.division-card p { color: #cfcfcf; font-size: 0.95rem; line-height:1.45; }
+
+/* LIVE-specific look */
+.division-card.live {
+  border: 1px solid rgba(192,192,192,0.25); /* platinum border */
+  box-shadow: 0 8px 24px rgba(192,192,192,0.06);
+  position: relative;
+}
+
+/* Live button */
 .live-btn {
   display: inline-block;
-  background: linear-gradient(90deg, gold, #C0C0C0);
-  color: #000;
-  padding: 8px 20px;
+  margin-top: 0.9rem;
+  padding: 0.55rem 1rem;
   border-radius: 10px;
-  font-weight: bold;
+  background: linear-gradient(90deg, gold 0%, #C0C0C0 100%);
+  color: #000;
+  font-weight: 700;
   text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 6px 18px rgba(255,215,0,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.live-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(192,192,192,0.18);
 }
 
-.live-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(192, 192, 192, 0.8);
+/* subtle hover for any division card */
+.division-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(255,215,0,0.06);
+  border-color: rgba(255,215,0,0.12);
 }
+
+/* optional 'Recently Launched' badge in top-right corner */
+.division-card.live::after {
+  content: "🚀 Recently Launched";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(90deg, rgba(255,215,0,0.95), rgba(192,192,192,0.95));
+  color: #000;
+  font-size: 0.7rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight:700;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+}
+
+/* keep 'Coming Soon' small status style if used */
+.status {
+  display:inline-block;
+  margin-top:0.8rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,215,0,0.25);
+  color: gold;
+  font-weight:700;
+  font-size:0.85rem;
+  background: rgba(0,0,0,0.25);
+}
+
 
