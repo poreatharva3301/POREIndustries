@@ -67,3 +67,25 @@ footer {text-align:center; padding:2rem; color:#777; border-top:1px solid #222;}
     opacity: 1;
   }
 }
+.division-card.live {
+  border: 1px solid #C0C0C0; /* Platinum silver border */
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.4);
+}
+
+.live-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, gold, #C0C0C0);
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.live-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.8);
+}
+
